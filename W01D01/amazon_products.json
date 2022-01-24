@@ -1,0 +1,7 @@
+{
+"products": [
+	{"brand":"reelock","price":"300"},
+	{"brand":"mike","price":"700","colors":
+	["red","chilly green"]}
+	]
+}
