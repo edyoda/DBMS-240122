@@ -60,4 +60,61 @@ SELECT * FROM student WHERE Name LIKE 'V%KY';
 -- ALL THE ABOVE QUERY CAN BE COMBINED WITH WHERE.
 
 
+-- Start working with classic Database
+-- how to run all the commands(query,code) from a .sql file?
+-- -> source command.
+
+-- source path_of_the_dot_sql_file/classic.sql
+-- source /Users/mohitchouhan/Documents/GitHub/DBMS-240122/classic.sql
+
+
+USE classicmodels;
+
+
+DESC customers;
+DESC products;
+SELECT productName,productLine,buyPrice FROM products;
+
+-- ORDER BY CLAUSE
+
+SELECT productName,productLine,buyPrice 
+FROM products ORDER BY buyPrice;
+-- By default order by works in ascending order
+
+-- for descending order we can use desc
+SELECT productName,productLine,buyPrice 
+FROM products ORDER BY buyPrice DESC;
+
+-- Group By Clause
+-- Best used with Aggregate functions
+
+-- How many motor cycles are there, and  Hence 
+-- how many other productlines are there?
+
+SELECT productName,productLine,quantityInStock FROM products;
+SELECT productLine,SUM(quantityInStock) FROM products
+GROUP BY productLine;
+
+SELECT productLine,COUNT(*),SUM(quantityInStock) FROM products
+GROUP BY productLine;
+
+SELECT productLine,MAX(buyPrice),COUNT(*),SUM(quantityInStock) FROM products
+GROUP BY productLine;
+
+USE deathnote;
+
+SHOW TABLES;
+Drop Table sales;
+SHOW TABLES;
+
+INSERT INTO student VALUES
+(345,'Mahiya Mahiya','ECE'),
+(786,'Kachha Badaam','PHY');
+SELECT * FROM student;
+SELECT Major,COUNT(*) FROM student GROUP BY Major;
+
+SELECT Major, SUM(student_id) FROM student GROUP BY Major;
+
+
+
 
